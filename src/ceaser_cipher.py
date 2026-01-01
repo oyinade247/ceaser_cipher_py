@@ -6,6 +6,11 @@ def encrypt(text, key):
             letter = chr(ord(each_char) + key)
             if each_char > 'z':
                 letter = chr(ord(each_char) - 26)
+
+        if each_char >= 'A' and each_char <= 'Z':
+            letter = chr(ord(each_char) + key)
+            if each_char > 'Z':
+                letter = chr(ord(each_char) + 26)
         result += letter
 
     return result
@@ -18,6 +23,11 @@ def decrypt(word, key):
         if each_char >= 'a' and each_char <= 'z':
             letter = chr(ord(each_char) - key)
             if each_char > 'z':
+                letter = chr(ord(each_char) + 26)
+
+        if each_char >= 'A' and each_char <= 'Z':
+            letter = chr(ord(each_char) - key)
+            if each_char > 'Z':
                 letter = chr(ord(each_char) + 26)
         result += letter
 
